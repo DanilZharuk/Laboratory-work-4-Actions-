@@ -1,1 +1,31 @@
+name: Print Software Versions
 
+on:
+  workflow_dispatch:
+
+jobs:
+  data-processing-software:
+    name: Виведення версій програм обробки даних
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Вивести версію Python
+        run: python3 --version
+
+      - name: Вивести версію Node.js
+        run: node --version
+
+      - name: Вивести версію .NET SDK
+        run: dotnet --version
+
+  database-software:
+    name: Виведення версій СКБД
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Вивести версію PostgreSQL
+        run: psql --version
