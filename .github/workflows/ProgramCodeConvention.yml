@@ -16,4 +16,4 @@ jobs:
         run: dotnet tool install -g dotnet-format
 
       - name: Перевірити стиль коду
-        run: dotnet-format RelaxationSystem/RelaxationSystem.csproj --check
+        run: dotnet-format $GITHUB_WORKSPACE/RelaxationSystem.csproj --check
