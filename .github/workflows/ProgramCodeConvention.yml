@@ -12,10 +12,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Встановити .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x  # або іншу версію твого проєкту
+
       - name: Встановити dotnet-format
         run: dotnet tool install -g dotnet-format
 
+      - name: Додати dotnet tools у PATH
+        run: echo "/home/runner/.dotnet/tools" >> $GITHUB_PATH
+
       - name: Перевірити стиль коду
         run: |
-          cd $GITHUB_WORKSPACE
-          dotnet-format RelaxationSystem.csproj --check
+          dotnet format RelaxationSystem.csproj --check --verbosity diagnostic
