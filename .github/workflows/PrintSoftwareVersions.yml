@@ -11,9 +11,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Вивести версію Python
-        run: python3 --version
-
       - name: Вивести версію Node.js
         run: node --version
 
