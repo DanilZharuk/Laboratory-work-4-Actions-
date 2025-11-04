@@ -15,7 +15,7 @@ jobs:
       - name: Встановити .NET SDK
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 8.0.x  # або іншу версію твого проєкту
+          dotnet-version: 8.0.x
 
       - name: Встановити dotnet-format
         run: dotnet tool install -g dotnet-format
@@ -25,4 +25,4 @@ jobs:
 
       - name: Перевірити стиль коду
         run: |
-          dotnet format RelaxationSystem.csproj --check --verbosity diagnostic
+          dotnet format RelaxationSystem.csproj --verify-no-changes --verbosity diagnostic
