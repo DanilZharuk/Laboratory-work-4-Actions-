@@ -1,12 +1,5 @@
-using System;
-
-namespace RelaxationSystem
+using System;namespace RelaxationSystem
 {
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Програмний продукт: Relaxation System");
-        }
-    }
-}
+internal  class   program{
+ static void Main( string[] Args ){
+Console.WriteLine ("Програмний продукт:Relaxation System" );  } } }
