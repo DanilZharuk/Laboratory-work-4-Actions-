@@ -9,20 +9,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Клонування репозиторію
         uses: actions/checkout@v3
 
-      - name: Встановити .NET SDK
+      - name: Встановлення .NET SDK
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 8.0.x
 
-      - name: Встановити dotnet-format
+      - name: Встановлення dotnet-format
         run: dotnet tool install -g dotnet-format
 
-      - name: Додати dotnet tools у PATH
-        run: echo "/home/runner/.dotnet/tools" >> $GITHUB_PATH
+      - name: Додавання dotnet tools до PATH
+        run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
-      - name: Перевірити стиль коду
-        run: |
-          dotnet format ProgramCode.cs --verify-no-changes --verbosity diagnostic
+      - name: Перевірка стилю коду
+        run: dotnet format --verify-no-changes --verbosity diagnostic
