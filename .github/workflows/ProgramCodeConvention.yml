@@ -25,4 +25,4 @@ jobs:
 
       - name: Перевірити стиль коду
         run: |
-          dotnet format RelaxationSystem.csproj --verify-no-changes --verbosity diagnostic
+          dotnet format ProgramCode.cs --verify-no-changes --verbosity diagnostic
