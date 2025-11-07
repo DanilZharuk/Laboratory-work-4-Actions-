@@ -24,4 +24,4 @@ jobs:
         run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
       - name: Перевірка стилю коду
-        run: dotnet format --verify-no-changes --verbosity diagnostic
+        run: dotnet format ProgramCode.csproj --verify-no-changes --verbosity diagnostic
